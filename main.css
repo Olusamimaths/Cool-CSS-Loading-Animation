@@ -18,3 +18,6 @@
     color: transparent;
     background: #eceff1;
   }
+  li {
+      margin-bottom: 0.5em;
+  }
