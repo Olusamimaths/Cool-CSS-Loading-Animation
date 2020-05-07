@@ -1,8 +1,12 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [loadingState, setLoadingState] = useState(true)
-  const [contentState, setContentState] = useState({})
+  const [loadingState, setLoadingState] = useState(true);
+  const [contentState, setContentState] = useState({
+    header: "Loading",
+    intro: "Loading",
+    list: ["Loading", "Loading", "Loading"],
+  });
 
   const content = {
     header: `So, how 'bout them Knicks?`,
@@ -15,19 +19,20 @@ export default function Home() {
   };
   useEffect(() => {
     setTimeout(() => {
-      setContentState(content)
-      setLoadingState(false)
-    }, 2000)
-  })
+      setContentState(content);
+      setLoadingState(false);
+    }, 2000);
+  });
   return (
     <div className="container">
-      <main className={loadingState ? 'loading' : ''}>
+      <main className={loadingState ? "loading" : ""}>
         <h1>{contentState.header}</h1>
         <p>{contentState.intro}</p>
         <ul>
-          { Array.isArray(contentState.list) && contentState.list.map((item, i) => {
-            return <li key={i}>{item}</li>;
-          })}
+          {Array.isArray(contentState.list) &&
+            contentState.list.map((item, i) => {
+              return <li key={i}>{item}</li>;
+            })}
         </ul>
       </main>
 
@@ -35,8 +40,7 @@ export default function Home() {
         {`
           .loading h1,
           .loading p,
-          .loading li
-           {
+          .loading li {
             color: transparent;
             background: linear-gradient(
               100deg,
