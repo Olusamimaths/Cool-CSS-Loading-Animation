@@ -21,7 +21,7 @@ export default function Home() {
   })
   return (
     <div className="container">
-      <main>
+      <main className={loadingState ? 'loading' : ''}>
         <h1>{contentState.header}</h1>
         <p>{contentState.intro}</p>
         <ul>
@@ -33,7 +33,10 @@ export default function Home() {
 
       <style jsx>
         {`
-          .loading {
+          .loading h1,
+          .loading p,
+          .loading li
+           {
             color: transparent;
             background: linear-gradient(
               100deg,
