@@ -1,23 +1,35 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: sans-serif;
-    padding: 0;
-    margin: 0;
-  }
-  
-  main {
-    max-width: 50em;
-    padding: 0 1em;
-    margin: 0 auto;
-  } 
+  box-sizing: border-box;
+}
 
-  .loading {
-    color: transparent;
-    background: #eceff1;
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  max-width: 50em;
+  padding: 0 1em;
+  margin: 0 auto;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+.loading {
+  color: transparent;
+  background: linear-gradient(100deg, #eceff1 30%, #f6f7f8 50%, #eceff1 70%);
+  background-size: 400%;
+  animation: loading 1.2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 100% 50%;
   }
-  li {
-      margin-bottom: 0.5em;
+  100% {
+    background-position: 0 50%;
   }
+}
